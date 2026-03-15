@@ -19,3 +19,5 @@ CREATE TABLE Livro (
     FOREIGN KEY (id_categoria) REFERENCES Categoria(id_categoria)
     
 );
+
+SHOW TABLES;
