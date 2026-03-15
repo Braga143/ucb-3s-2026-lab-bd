@@ -1,5 +1,5 @@
-CREATE DATABASE atividade_18_03_2026;
-USE atividade_18_03_2026;
+CREATE DATABASE atividade2;
+USE atividade2;
 
 CREATE TABLE Usuario (
 	id_usuario INT AUTO_INCREMENT PRIMARY KEY,

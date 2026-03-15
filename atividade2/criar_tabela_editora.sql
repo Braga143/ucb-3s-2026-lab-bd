@@ -1,4 +1,4 @@
-USE atividade_18_03_2026;
+USE atividade2;
 
 CREATE TABLE Editora (
 	id_editora INT AUTO_INCREMENT PRIMARY KEY,

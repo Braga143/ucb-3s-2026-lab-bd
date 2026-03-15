@@ -1,4 +1,4 @@
-USE atividade_18_03_2026;
+USE atividade2;
 
 CREATE TABLE Livro (
 	id_livro INT AUTO_INCREMENT PRIMARY KEY,
@@ -7,7 +7,7 @@ CREATE TABLE Livro (
     id_editora INT,
     id_categoria INT,
     titulo VARCHAR(255) NOT NULL UNIQUE,
-    sinopse TEXT NOT NULL UNIQUE,
+    sinopse TEXT,
     ano_publicacao YEAR NOT NULL UNIQUE,
     lido BOOLEAN NOT NULL UNIQUE,
     data_cadastro TIMESTAMP NOT NULL UNIQUE,
