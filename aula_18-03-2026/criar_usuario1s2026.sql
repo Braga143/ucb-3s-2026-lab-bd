@@ -6,8 +6,8 @@ CREATE TABLE Usuario (
 	nome VARCHAR(255) NOT NULL,
 	email VARCHAR(255) NOT NULL UNIQUE,
 	senha VARCHAR(255) NOT NULL UNIQUE,
-	data_cadastro TIMESTAMP,
-	data_atualizacao TIMESTAMP
+	data_cadastro TIMESTAMP NOT NULL,
+	data_atualizacao TIMESTAMP NOT NULL
 );
 
 SHOW TABLES;
