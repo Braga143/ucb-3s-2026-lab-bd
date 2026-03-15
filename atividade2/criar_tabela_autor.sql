@@ -4,8 +4,8 @@ CREATE TABLE Autor (
 	id_autor INT AUTO_INCREMENT PRIMARY KEY,
     nome_autor VARCHAR(255) NOT NULL UNIQUE,
     ano_nascimento YEAR NOT NULL,
-    ano_morte YEAR NOT NULL,
+    ano_morte YEAR NULL,
     apresentacao TEXT,
-    data_cadastro TIMESTAMP NOT NULL,
-    data_atualizacao TIMESTAMP NOT NULL
+    data_cadastro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	data_atualizacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
