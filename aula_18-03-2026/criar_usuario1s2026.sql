@@ -1,0 +1,13 @@
+CREATE DATABASE atividade_18_03_2026;
+USE atividade_18_03_2026;
+
+CREATE TABLE Usuario (
+	id_usuario INT AUTO_INCREMENT PRIMARY KEY,
+	nome VARCHAR(255) NOT NULL,
+	email VARCHAR(255) NOT NULL UNIQUE,
+	senha VARCHAR(255) NOT NULL UNIQUE,
+	data_cadastro TIMESTAMP,
+	data_atualizacao TIMESTAMP
+);
+
+SHOW TABLES;
