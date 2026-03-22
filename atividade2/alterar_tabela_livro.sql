@@ -1,27 +1,40 @@
-USE atividade2;
+USE atividade1;
 
-CREATE TABLE Livro (
-	id_livro INT AUTO_INCREMENT PRIMARY KEY,
-    id_usuario INT,
-    id_autor INT,
-    id_editora INT,
-    id_categoria INT,
-    titulo VARCHAR(255) NOT NULL UNIQUE,
-    sinopse TEXT,
-    ano_publicacao YEAR NOT NULL,
-    lido BOOLEAN NOT NULL,
-    data_cadastro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-	data_atualizacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+/*Removendo colunas antigas*/
 
-    CONSTRAINT fk_livro_usuario FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario)
-        ON DELETE CASCADE,
+/*OBS: Mantido nome 'livro' conforme estrutura original da atividade1*/
+ALTER TABLE livro
+	DROP COLUMN autor,
+	DROP COLUMN editora,
+	DROP COLUMN categoria;
 
-    CONSTRAINT fk_livro_autor FOREIGN KEY (id_autor) REFERENCES Autor(id_autor),
+/*Adicionando novas colunas e as relações entre as tabelas*/
+ALTER TABLE livro
+	ADD COLUMN id_usuario INT NOT NULL,
+	ADD COLUMN id_autor INT NOT NULL,
+	ADD COLUMN id_editora INT NOT NULL,
+	ADD COLUMN id_categoria INT NOT NULL,
+	ADD COLUMN data_cadastro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	ADD COLUMN data_atualizacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;
 
-    CONSTRAINT fk_livro_editora FOREIGN KEY (id_editora) REFERENCES Editora(id_editora),
-
-    CONSTRAINT fk_livro_categoria FOREIGN KEY (id_categoria) REFERENCES Categoria(id_categoria)
+/*Definição das chaves estrangeiras*/
+ALTER TABLE livro
+	ADD CONSTRAINT fk_livro_usuario 
+	FOREIGN KEY (id_usuario) 
+	REFERENCES usuario(id_usuario) 
+    ON DELETE CASCADE,
     
-);
+	ADD CONSTRAINT fk_livro_autor 
+	FOREIGN KEY (id_autor) 
+	REFERENCES atividade2.autor(id_autor),
+    
+	ADD CONSTRAINT fk_livro_editora 
+	FOREIGN KEY (id_editora) 
+	REFERENCES atividade2.editora(id_editora),
+    
+	ADD CONSTRAINT fk_livro_categoria 
+	FOREIGN KEY (id_categoria) 
+    REFERENCES atividade2.categoria(id_categoria);
 
-SHOW TABLES;
+
+
