@@ -4,7 +4,7 @@ USE atividade3;
 
 CREATE TABLE Usuario(
 	id_usuario INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(255),
+    nome VARCHAR(255) NOT NULL UNIQUE,
     email VARCHAR(255) UNIQUE,
     senha VARCHAR(255),
     data_cadastro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
