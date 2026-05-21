@@ -1,6 +1,6 @@
-CREATE DATABASE atividade3;
 
-USE atividade3;
+
+USE biblioteca_pessoal_1s2026;
 
 CREATE TABLE Usuario(
 	id_usuario INT AUTO_INCREMENT PRIMARY KEY,
@@ -15,7 +15,7 @@ CREATE TABLE Autor(
 	id_autor INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(255) NOT NULL UNIQUE,
     ano_nascimento YEAR,
-    ano_morte YEAR,
+    ano_morte INT,
     apresentacao TEXT,
     data_cadastro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     data_atualizacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
@@ -48,7 +48,7 @@ CREATE TABLE Livro (
     id_categoria INT,
     titulo VARCHAR(255) NOT NULL UNIQUE,
     sinopse TEXT,
-    ano_publicacao YEAR NOT NULL,
+    ano_publicacao INT NOT NULL,
     lido BOOLEAN NOT NULL,
     data_cadastro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     data_atualizacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
